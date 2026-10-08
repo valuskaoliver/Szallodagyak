@@ -6,7 +6,6 @@ namespace Szallodagyak
 {
     internal class Szoba
     {
-        private int terezia;
         private int ejszakaiAr;
         private int feroHely;
         private static int osszesRegisztraltSzoba = 0;
@@ -40,6 +39,14 @@ namespace Szallodagyak
             FeroHely = ferohely;
             osszesRegisztraltSzoba++;
         }
-        
+        public override string ToString()
+        {
+            return $"{Szobaszam} Emelet : {Emelet}. | Férőhely : {FeroHely} fő. | Ár: {EjszakaiAr} Ft/éj";
+        }
+
+        public int FoglalasErteke(int ejszakakSzama)
+        {
+            return ejszakakSzama * EjszakaiAr;
+        }
     }
 }
